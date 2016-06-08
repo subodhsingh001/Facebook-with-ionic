@@ -2,9 +2,27 @@
 The Facebook plugin for Apache Cordova allows you to use the same JavaScript code in your Cordova application as you use in your web application. However, unlike in the browser, the Cordova application will use the native Facebook app to perform Single Sign On for the user. If this is not possible then the sign on will degrade gracefully using the standard dialog based authentication.
 To work facebook you neded to install plugin first
 
-Cordova-plugin-facebook4
+Make sure you've registered your Facebook app with Facebook and have an APP_ID https://developers.facebook.com/apps.
+
+Then install Cordova-plugin-facebook4 through cmd or gitbash anything use use
+
 https://github.com/jeduan/cordova-plugin-facebook4
 $ cordova plugin add cordova-plugin-facebook4 --save --variable APP_ID="123456789" --variable APP_NAME="myApplication"
+
+Sometimes you will face problem to get logged in as token error ,but you can solve it in this way
+
+This is how i solved this problem
+Downloaded your APK to your PC in java jdk\bin folder
+C:\Program Files\Java\jdk1.7.0_79\bin
+go to java jdk\bin folder and run cmd then
+copy the following command in your cmd
+keytool -list -printcert -jarfile tris.apk
+Copy the SHA1 value to your clip board
+like this CD:A1:EA:A3:5C:5C:68:FB:FA:0A:6B:E5:5A:72:64:DD:26:8D:44:84
+and open http://tomeko.net/online_tools/hex_to_base64.php10 to convert your SHA1 value to base64. This is what Facebook requires
+get
+zaHqo1xcaPv6CmvlWnJk3SaNRIQ= as our keyhash.
+
 
 For example you start coding in this way:-
 
