@@ -28,6 +28,7 @@ For example you start coding in this way:-
 
 
 $scope.facebookSignIn = function() {
+
     $ionicLoading.show({
       //template: 'Logging in...'
     });
@@ -52,6 +53,7 @@ var fbLoginSuccess = function (access_token) {
     }, function(error) {
         alert("Error: " + error);
     });
+    
 }  
 
 here we are using our API to get login in our server 
@@ -88,5 +90,6 @@ var trisFbLogin = function (access_token,fbdata) {
         $state.go($state.current, {}, {reload: true}); 
         $scope.signInModal.hide();	
         $ionicLoading.hide();
+        
 }  
 
